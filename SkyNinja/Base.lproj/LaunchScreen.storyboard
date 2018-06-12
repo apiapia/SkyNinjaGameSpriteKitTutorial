@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ifiero-logo" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-Zh-jpO">
+                                <rect key="frame" x="291" y="70" width="85" height="85"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COPYRIGHT © 2018 IFIERO.COM ALL RIGHTS RESERVED." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UFq-WB-18b">
+                                <rect key="frame" x="111" y="344" width="445" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dom-iE-3Gw"/>
+                                    <constraint firstAttribute="height" constant="21" id="zLh-FW-IAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKY NINJA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-5Z-iqb">
+                                <rect key="frame" x="243" y="165" width="181" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天猪之城" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3J-4d-i4P">
+                                <rect key="frame" x="258" y="223" width="150" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8k0-Zh-jpO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="BeW-0L-xVy"/>
+                            <constraint firstItem="8k0-Zh-jpO" firstAttribute="centerX" secondItem="UFq-WB-18b" secondAttribute="centerX" id="C5w-bf-2FE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UFq-WB-18b" secondAttribute="trailing" id="Fhu-Fa-Kit"/>
+                            <constraint firstItem="NSL-5Z-iqb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FzT-WN-tX0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UFq-WB-18b" secondAttribute="bottom" constant="10" id="KLr-1r-Jux"/>
+                            <constraint firstItem="e3J-4d-i4P" firstAttribute="centerX" secondItem="NSL-5Z-iqb" secondAttribute="centerX" id="L9e-jl-UZr"/>
+                            <constraint firstItem="NSL-5Z-iqb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y12-9e-8qY"/>
+                            <constraint firstItem="e3J-4d-i4P" firstAttribute="top" secondItem="8k0-Zh-jpO" secondAttribute="bottom" constant="68" id="dmE-LX-sls"/>
+                            <constraint firstItem="UFq-WB-18b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iah-PD-DtW"/>
+                            <constraint firstItem="8k0-Zh-jpO" firstAttribute="centerX" secondItem="NSL-5Z-iqb" secondAttribute="centerX" id="qbv-fE-jce"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <size key="freeformSize" width="667" height="375"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ifiero-logo" width="85" height="85"/>
+    </resources>
+</document>
