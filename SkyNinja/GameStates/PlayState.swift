@@ -23,9 +23,9 @@ class PlayState:GKState {
         scene.bombTempNode.isHidden = true
         scene.coinTempNode.isHidden = true
         scene.playerNode.startPlayer()
-        
+         
         initTopBottomLineNode()           /// 加入上线二条碰撞线
-        scene.playerNode.reversePlayer() ///  一进入didEnter人物会碰到底部的LineNode,所以立马反转人物;
+        // scene.playerNode.reversePlayer() ///  一进入didEnter人物会碰到底部的LineNode,所以立马反转人物;
         
         // 用Timer每隔1s调用 spawnBomb 注意此处是在State里，则target要为scene.self而不是self
         Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: scene.self, selector: #selector(scene.spawnBombs), userInfo: nil, repeats: true)
@@ -37,13 +37,13 @@ class PlayState:GKState {
     // MARK:- 加入上线二条碰撞线
     func initTopBottomLineNode(){
         
-        let topLine = LineNode()
-        topLine.initLine(size: scene.size, yPos: scene.size.height * 0.7)
-        scene.addChild(topLine)
-        
-        let bottomLine = LineNode()
-        bottomLine.initLine(size: scene.size, yPos: scene.size.height * 0.3)
-        scene.addChild(bottomLine)
+//        let topLine = LineNode()
+//        topLine.initLine(size: scene.size, yPos: scene.size.height * 0.7)
+//        scene.addChild(topLine)
+//        
+//        let bottomLine = LineNode()
+//        bottomLine.initLine(size: scene.size, yPos: scene.size.height * 0.3)
+//        scene.addChild(bottomLine)
         
     }
     /// 下一State是GameOver
@@ -58,6 +58,7 @@ class PlayState:GKState {
             scene.moveCamera() /// 移动camera
             scene.playerNode.movePlayer() /// 移动玩家
             scene.moveSprites(camera: scene.mainCamera!) /// 移动天空及地面;
+            scene.playerNode.reversePlayer()
         }else {
             scene.stopCamera() /// 停止camera
         }

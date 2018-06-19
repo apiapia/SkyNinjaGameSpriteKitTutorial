@@ -13,6 +13,7 @@ class PlayerNodeClass:SKSpriteNode {
     
     private var playerTextureAtlas = SKTextureAtlas()
     private var playerTextures     = [SKTexture]()
+    private var playerUpDown = false
     
      // MARK:-玩家
     func initPlayer(){
@@ -24,7 +25,9 @@ class PlayerNodeClass:SKSpriteNode {
             playerTextures.append(SKTexture(imageNamed: imageName))
         }
         /// 节点的物理特性 /// SKPhysicsBody(rectangleOf: self.size)
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width / 2, height: self.size.height))
+        // self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width / 2, height: self.size.height))
+        let playerMask = SKTexture(imageNamed: "t1Mask")
+        self.physicsBody = SKPhysicsBody(texture: playerMask, size:  CGSize(width: playerMask.size().width * 0.7, height: playerMask.size().height * 0.7))
         self.physicsBody?.restitution = 0  // bounciness物体落下时反弹跳力不会消减
         self.physicsBody?.categoryBitMask    = PhysicsCategory.Player
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Coin | PhysicsCategory.SkyLine | PhysicsCategory.GroudLine
@@ -37,6 +40,7 @@ class PlayerNodeClass:SKSpriteNode {
         /// repeatForever执行
         let repeatAction = SKAction.repeatForever(playerAnimation)
         self.run(repeatAction, withKey: "jogging")
+       
         
     }
     // MARK: - 停止动画
@@ -51,7 +55,17 @@ class PlayerNodeClass:SKSpriteNode {
     
     // MARK: - 反转Player
     func reversePlayer(){
-        self.yScale *= -1
+        print(self.position.y,(scene?.size.height)! * 0.4)
+        
+        if self.position.y > (scene?.size.height)! * 0.6 {
+                self.yScale = -1 * 0.7
+        }
+        
+        if self.position.y < (scene?.size.height)! * 0.4 {
+            self.yScale  = 1 * 0.7
+        }
+        
+        
     }
     
 }

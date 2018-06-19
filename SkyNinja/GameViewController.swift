@@ -55,7 +55,7 @@ class GameViewController: UIViewController {
                 view.presentScene(scene)
             }
             /* ***** 千万嫑嫑嫑小看了这一句的强大功效(监测物理体外框) ***** */
-            ///view.showsPhysics = true
+            view.showsPhysics = true
             view.ignoresSiblingOrder = true  /// 是否忽略图层自动排列 true
             view.showsFPS = true
             view.showsNodeCount = true

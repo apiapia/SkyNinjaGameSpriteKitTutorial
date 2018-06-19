@@ -276,10 +276,12 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
             bodyB = contact.bodyA
         }
         ///检测碰到中间线
+        /*
         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.MiddleLine {
             /// print("碰到屏幕线人物反转")
             playerNode.reversePlayer() 
         }
+       */
         
         ///检测碰到coin
         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.Coin {
