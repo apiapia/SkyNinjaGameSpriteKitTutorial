@@ -294,7 +294,7 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
         ///检测碰到Bomb
         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.Bomb {
             /// 播放音乐
-            let bombAction = SKAction.playSoundFileNamed("ninjaHit.wav", waitForCompletion: false)
+            let bombAction = SKAction.playSoundFileNamed("ninjaHit.wav", waitForCompletion: true)
             run(bombAction)
             /// 移除BOMB
             /// bodyB.node?.removeFromParent()

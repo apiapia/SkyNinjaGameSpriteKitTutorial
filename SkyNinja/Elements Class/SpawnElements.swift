@@ -33,7 +33,8 @@ class SpawnElements {
         item.addChild(emitterNode)
         
         /// 物理引擎 SKPhysicsBody(rectangleOf: item.size)
-        item.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: item.size.width, height: item.size.height))
+        let bombTexture = SKTexture(imageNamed: "bomb")
+        item.physicsBody = SKPhysicsBody(texture: bombTexture, size: CGSize(width: bombTexture.size().width * 0.7 , height: bombTexture.size().height * 0.7)) /// 大小缩小 0.7 
         item.physicsBody?.affectedByGravity = false
         item.physicsBody?.categoryBitMask    = PhysicsCategory.Bomb
         item.physicsBody?.contactTestBitMask = PhysicsCategory.Player

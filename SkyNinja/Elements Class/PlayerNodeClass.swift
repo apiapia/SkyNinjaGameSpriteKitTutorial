@@ -32,6 +32,7 @@ class PlayerNodeClass:SKSpriteNode {
         self.physicsBody?.categoryBitMask    = PhysicsCategory.Player
         self.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Coin | PhysicsCategory.SkyLine | PhysicsCategory.GroudLine
         self.physicsBody?.collisionBitMask   = PhysicsCategory.GroudLine | PhysicsCategory.SkyLine
+        
     }
 
     func startPlayer(){
@@ -55,7 +56,7 @@ class PlayerNodeClass:SKSpriteNode {
     
     // MARK: - 反转Player
     func reversePlayer(){
-        print(self.position.y,(scene?.size.height)! * 0.4)
+        // print(self.position.y,(scene?.size.height)! * 0.4)
         
         if self.position.y > (scene?.size.height)! * 0.6 {
                 self.yScale = -1 * 0.7
