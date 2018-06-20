@@ -22,6 +22,7 @@ class PlayState:GKState {
         scene.moveAllowed = true /// 场景可以移动了
         scene.bombTempNode.isHidden = true
         scene.coinTempNode.isHidden = true
+        scene.learnTemp.isHidden = true 
         scene.playerNode.startPlayer()
          
         initTopBottomLineNode()           /// 加入上线二条碰撞线

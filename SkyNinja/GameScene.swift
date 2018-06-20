@@ -57,6 +57,7 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
      * 3.为何要设置独立的class精灵,可以为GameScene减少代码,并有利于代码的复用;
      */
     var playerNode:PlayerNodeClass!
+    var learnTemp:SKSpriteNode!
     var coinTempNode:SKSpriteNode!
     var bombTempNode:SKSpriteNode!
     var mainCamera:SKCameraNode!
@@ -109,6 +110,7 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
     func initCoinBomb(){
         coinTempNode = childNode(withName: "CoinTemp") as! SKSpriteNode
         bombTempNode = childNode(withName: "BombTemp") as! SKSpriteNode
+        learnTemp   = childNode(withName: "learnTemp") as! SKSpriteNode
     }
     //MARK: - 物理线
     func initSkyGroundLine(){
@@ -240,6 +242,15 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
                 stateMachine.enter(PlayState.self) /// 进入开始游戏;
             }
             
+            guard let learnTempNode = body.node?.childNode(withName: "learnTemp") as? SKSpriteNode else {
+                return
+            }
+            if (learnTempNode.contains(touchLocation)){
+                UIApplication.shared.open(URL(string: "http://www.iFIERO.com")!, options: [:], completionHandler: { (error) in
+                    print("jump to http://www.iFiero.com")
+                })
+            }
+            
         case is PlayState:
             reverseGravity() /// 反转物理世界;
             
@@ -256,11 +267,8 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
                     restartGame()
                 }
             }
-            
         default:
             break;
-            
-            
         }
     }
     // MARK: - 监测碰撞
@@ -277,11 +285,11 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
         }
         ///检测碰到中间线
         /*
-        if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.MiddleLine {
-            /// print("碰到屏幕线人物反转")
-            playerNode.reversePlayer() 
-        }
-       */
+         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.MiddleLine {
+         /// print("碰到屏幕线人物反转")
+         playerNode.reversePlayer()
+         }
+         */
         
         ///检测碰到coin
         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.Coin {

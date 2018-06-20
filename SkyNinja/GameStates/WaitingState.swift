@@ -39,6 +39,7 @@ class WaitingState:GKState {
         scene.moveAllowed = false /// 初始进入WaitState人物+场景是不可以运动的;
         scene.coinTempNode.isHidden = false 
         scene.bombTempNode.isHidden = false
+        scene.learnTemp.isHidden = false
         initPlayButton()
     }
     // 正确无误 进入一下个State PlayState
