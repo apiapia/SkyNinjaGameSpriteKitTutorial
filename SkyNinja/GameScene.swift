@@ -304,6 +304,7 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
             /// 播放音乐
             let bombAction = SKAction.playSoundFileNamed("ninjaHit.wav", waitForCompletion: true)
             run(bombAction)
+            bodyA.categoryBitMask = PhysicsCategory.None  /// 防止一直和Bomb碰撞 产生多重声音;
             /// 移除BOMB
             /// bodyB.node?.removeFromParent()
             stateMachine.enter(GameOverState.self)

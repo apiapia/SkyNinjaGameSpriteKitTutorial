@@ -404,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 48X349N2P7;
 				INFOPLIST_FILE = SkyNinja/Info.plist;
@@ -413,8 +414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFiero.SkyNinjaGameTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1fb9e0a0-3aa2-48db-b939-71cf16909966";
-				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialDev;
+				PROVISIONING_PROFILE = "79cd2dde-932c-4895-8418-62c1722828ae";
+				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialProd;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 48X349N2P7;
 				INFOPLIST_FILE = SkyNinja/Info.plist;
@@ -433,8 +435,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFiero.SkyNinjaGameTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e898d1da-d836-4d7d-8777-19fbd65a7528";
-				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialDev;
+				PROVISIONING_PROFILE = "79cd2dde-932c-4895-8418-62c1722828ae";
+				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialProd;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

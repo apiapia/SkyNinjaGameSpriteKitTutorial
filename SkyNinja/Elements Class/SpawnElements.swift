@@ -36,6 +36,8 @@ class SpawnElements {
         let bombTexture = SKTexture(imageNamed: "bomb")
         item.physicsBody = SKPhysicsBody(texture: bombTexture, size: CGSize(width: bombTexture.size().width * 0.7 * 0.8 , height: bombTexture.size().height * 0.7 * 0.8)) /// 大小缩小 0.7 * 0.8(透明区域)
         item.physicsBody?.affectedByGravity = false
+        item.physicsBody?.allowsRotation = false
+        item.physicsBody?.isDynamic = false  /// 碰撞后物理体不进行动态反馈
         item.physicsBody?.categoryBitMask    = PhysicsCategory.Bomb
         item.physicsBody?.contactTestBitMask = PhysicsCategory.Player
         item.physicsBody?.collisionBitMask   = PhysicsCategory.None

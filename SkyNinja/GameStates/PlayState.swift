@@ -26,8 +26,6 @@ class PlayState:GKState {
         scene.playerNode.startPlayer()
          
         initTopBottomLineNode()           /// 加入上线二条碰撞线
-        // scene.playerNode.reversePlayer() ///  一进入didEnter人物会碰到底部的LineNode,所以立马反转人物;
-        
         // 用Timer每隔1s调用 spawnBomb 注意此处是在State里，则target要为scene.self而不是self
         Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: scene.self, selector: #selector(scene.spawnBombs), userInfo: nil, repeats: true)
         

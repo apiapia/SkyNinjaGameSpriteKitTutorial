@@ -28,10 +28,10 @@ class LineNode :SKNode {
         let endPoint   = CGPoint(x: size.width * SCENE_NUMBERS, y: yPos)
         self.name = "Line"
         physicsBody = SKPhysicsBody(edgeFrom: startPoint, to: endPoint)
-        physicsBody?.affectedByGravity = false
-        physicsBody?.categoryBitMask   = PhysicsCategory.SkyLine
+        physicsBody?.affectedByGravity  = false
+        physicsBody?.categoryBitMask    = PhysicsCategory.SkyLine
         physicsBody?.contactTestBitMask = PhysicsCategory.Player
-        physicsBody?.collisionBitMask  = PhysicsCategory.None    /// 不会弹开
+        physicsBody?.collisionBitMask   = PhysicsCategory.None    /// 不会弹开
     }
     
     func initGroundLine(size:CGSize,yPos:CGFloat){ // 传入scene的尺寸
@@ -40,10 +40,10 @@ class LineNode :SKNode {
         let endPoint   = CGPoint(x: size.width * SCENE_NUMBERS, y: yPos)
         self.name = "Line"
         physicsBody = SKPhysicsBody(edgeFrom: startPoint, to: endPoint)
-        physicsBody?.affectedByGravity = false
-        physicsBody?.categoryBitMask   = PhysicsCategory.GroudLine
+        physicsBody?.affectedByGravity  = false
+        physicsBody?.categoryBitMask    = PhysicsCategory.GroudLine
         physicsBody?.contactTestBitMask = PhysicsCategory.Player
-        physicsBody?.collisionBitMask  = PhysicsCategory.None    /// 不会弹开
+        physicsBody?.collisionBitMask   = PhysicsCategory.None    /// 不会弹开
     }
 
 }
