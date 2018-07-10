@@ -296,20 +296,50 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
             /// print("碰到屏幕线人物反转")
             let coinAction = SKAction.playSoundFileNamed("coin.wav", waitForCompletion: false)
             run(coinAction)
+            bodyB.categoryBitMask = PhysicsCategory.None /// 去除双响;
+            
+             /// 加入收集coin特效;
+            let coinNode = SKNode()
+            coinNode.position = (bodyB.node?.position)!
+            self.addChild(coinNode)
+            
+            let coinEmitter = SKEmitterNode(fileNamed: "CollectNormal")
+            coinNode.addChild(coinEmitter!)
+            
             bodyB.node?.removeFromParent()
+            
+            coinEmitter?.run(SKAction.sequence([
+                SKAction.wait(forDuration: TimeInterval(0.7)),
+                SKAction.removeFromParent(),
+                
+                ]))
         }
         
-        ///检测碰到Bomb
+        /// 检测碰到Bomb
         if bodyA.categoryBitMask == PhysicsCategory.Player && bodyB.categoryBitMask == PhysicsCategory.Bomb {
             /// 播放音乐
-            let bombAction = SKAction.playSoundFileNamed("ninjaHit.wav", waitForCompletion: true)
+            /// let bombAction = SKAction.playSoundFileNamed("ninjaHit.wav", waitForCompletion: false)
+            /// 无法播放音乐 在Build Phases -> Copy Bundle Resources 导入即可;
+            let bombAction = SKAction.playSoundFileNamed("death.caf", waitForCompletion: false)
             run(bombAction)
             bodyA.categoryBitMask = PhysicsCategory.None  /// 防止一直和Bomb碰撞 产生多重声音;
-            /// 移除BOMB
-            /// bodyB.node?.removeFromParent()
+            /// 加入death 特效;
+            let deathNode = SKNode()
+            deathNode.position = (bodyA.node?.position)!
+            self.addChild(deathNode)
+            
+            let deathEmitter = SKEmitterNode(fileNamed: "death")
+            deathEmitter?.targetNode = deathNode
+            deathNode.addChild(deathEmitter!)
+            bodyA.node?.removeFromParent()
+            deathEmitter?.run(SKAction.sequence([
+                SKAction.wait(forDuration: TimeInterval(2.0)),
+                SKAction.removeFromParent(),
+                ]))
+            bodyB.node?.removeFromParent() /// 移除Bomb
+            
             stateMachine.enter(GameOverState.self)
         }
-        
     }
     // MARK: - 时时更新update
     override func update(_ currentTime: TimeInterval) {

@@ -22,6 +22,9 @@
 		21302A8F20C809CD0014029B /* ninjaHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21302A8E20C809CD0014029B /* ninjaHit.wav */; };
 		21302A9120C809D80014029B /* Bomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21302A9020C809D80014029B /* Bomb.wav */; };
 		21302A9320C80A900014029B /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21302A9220C80A900014029B /* coin.wav */; };
+		21374EAC20F4A4E60018FD54 /* CollectNormal.sks in Resources */ = {isa = PBXBuildFile; fileRef = 21374EAB20F4A4E60018FD54 /* CollectNormal.sks */; };
+		21374EB320F4B1BF0018FD54 /* death.sks in Resources */ = {isa = PBXBuildFile; fileRef = 21374EB220F4B1BF0018FD54 /* death.sks */; };
+		21374EB620F4B5E70018FD54 /* death.caf in Resources */ = {isa = PBXBuildFile; fileRef = 21374EB520F4B58F0018FD54 /* death.caf */; };
 		21568E8020CD302800800669 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21568E7F20CD302800800669 /* CGVector+Extensions.swift */; };
 		21568E8220CD302E00800669 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21568E8120CD302E00800669 /* CGFloat+Extension.swift */; };
 		21568E8720CD559600800669 /* PlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21568E8620CD559600800669 /* PlayState.swift */; };
@@ -49,6 +52,9 @@
 		21302A8E20C809CD0014029B /* ninjaHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ninjaHit.wav; sourceTree = "<group>"; };
 		21302A9020C809D80014029B /* Bomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bomb.wav; sourceTree = "<group>"; };
 		21302A9220C80A900014029B /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		21374EAB20F4A4E60018FD54 /* CollectNormal.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CollectNormal.sks; sourceTree = "<group>"; };
+		21374EB220F4B1BF0018FD54 /* death.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = death.sks; sourceTree = "<group>"; };
+		21374EB520F4B58F0018FD54 /* death.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = death.caf; path = SkyNinja/death.caf; sourceTree = SOURCE_ROOT; };
 		21568E7F20CD302800800669 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
 		21568E8120CD302E00800669 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		21568E8620CD559600800669 /* PlayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayState.swift; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 		21302A8920C809300014029B /* SoundsFiles */ = {
 			isa = PBXGroup;
 			children = (
+				21374EB520F4B58F0018FD54 /* death.caf */,
 				21302A9220C80A900014029B /* coin.wav */,
 				21302A8A20C809410014029B /* background.mp3 */,
 				21302A8E20C809CD0014029B /* ninjaHit.wav */,
@@ -166,6 +173,8 @@
 		21FE2DD820CF6D210032CE81 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				21374EB220F4B1BF0018FD54 /* death.sks */,
+				21374EAB20F4A4E60018FD54 /* CollectNormal.sks */,
 				21FE2DDB20CF6F3D0032CE81 /* Trail.sks */,
 			);
 			path = Particles;
@@ -229,7 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21374EB620F4B5E70018FD54 /* death.caf in Resources */,
 				21302A8B20C809410014029B /* background.mp3 in Resources */,
+				21374EAC20F4A4E60018FD54 /* CollectNormal.sks in Resources */,
 				21302A7A20C8066E0014029B /* Main.storyboard in Resources */,
 				21302A7120C8066E0014029B /* GameScene.sks in Resources */,
 				21302A8F20C809CD0014029B /* ninjaHit.wav in Resources */,
@@ -238,6 +249,7 @@
 				21FE2DDC20CF6F3D0032CE81 /* Trail.sks in Resources */,
 				21302A9320C80A900014029B /* coin.wav in Resources */,
 				21302A7F20C8066F0014029B /* LaunchScreen.storyboard in Resources */,
+				21374EB320F4B1BF0018FD54 /* death.sks in Resources */,
 				21302A8720C807DD0014029B /* Ninja.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,8 +416,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48X349N2P7;
 				INFOPLIST_FILE = SkyNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -414,8 +426,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFiero.SkyNinjaGameTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79cd2dde-932c-4895-8418-62c1722828ae";
-				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialProd;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,8 +437,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48X349N2P7;
 				INFOPLIST_FILE = SkyNinja/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -435,8 +447,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFiero.SkyNinjaGameTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79cd2dde-932c-4895-8418-62c1722828ae";
-				PROVISIONING_PROFILE_SPECIFIER = SkyNinjaGameTurorialProd;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

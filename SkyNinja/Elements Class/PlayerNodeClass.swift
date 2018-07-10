@@ -33,9 +33,12 @@ class PlayerNodeClass:SKSpriteNode {
         let playerMask = SKTexture(imageNamed: "t1Mask")
         self.physicsBody = SKPhysicsBody(texture: playerMask, size:  CGSize(width: playerMask.size().width * 0.7, height: playerMask.size().height * 0.7)) /// 0.7 的意思是缩小0.7倍
         self.physicsBody?.restitution = 0  // bounciness物体落下时反弹跳力不会消减
-        self.physicsBody?.categoryBitMask    = PhysicsCategory.Player
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Coin | PhysicsCategory.SkyLine | PhysicsCategory.GroudLine
-        self.physicsBody?.collisionBitMask   = PhysicsCategory.GroudLine | PhysicsCategory.SkyLine
+        self.physicsBody?.categoryBitMask  = PhysicsCategory.Player
+        /// 和谁发生碰撞并发出通知 didBegin 会监测到碰撞通知
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Coin
+        /// 相撞后会相互作用吗？比如站立、弹开
+        self.physicsBody?.collisionBitMask   = PhysicsCategory.SkyLine | PhysicsCategory.GroudLine
+        self.physicsBody?.isDynamic = true
         
     }
     
