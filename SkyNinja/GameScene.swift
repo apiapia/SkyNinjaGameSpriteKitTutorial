@@ -298,16 +298,16 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
             run(coinAction)
             bodyB.categoryBitMask = PhysicsCategory.None /// 去除双响;
             
-             /// 加入收集coin特效;
-            let coinNode = SKNode()
-            coinNode.position = (bodyB.node?.position)!
-            self.addChild(coinNode)
-            
+            /// 加入收集coin特效 position位置;
             let coinEmitter = SKEmitterNode(fileNamed: "CollectNormal")
-            coinNode.addChild(coinEmitter!)
-            
-            bodyB.node?.removeFromParent()
-            
+            coinEmitter?.position = (bodyB.node?.position)!
+            coinEmitter?.zPosition = 3
+            self.addChild(coinEmitter!)
+            //移除coin
+            bodyB.node?.run(SKAction.sequence([
+                SKAction.scale(to: 0.0, duration: 0.05),
+                SKAction.removeFromParent()]))
+            //移除coin特效节点
             coinEmitter?.run(SKAction.sequence([
                 SKAction.wait(forDuration: TimeInterval(0.7)),
                 SKAction.removeFromParent(),
