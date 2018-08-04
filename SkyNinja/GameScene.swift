@@ -305,7 +305,7 @@ class GameScene: SKScene ,SKPhysicsContactDelegate{
             self.addChild(coinEmitter!)
             //移除coin
             bodyB.node?.run(SKAction.sequence([
-                SKAction.scale(to: 0.0, duration: 0.05),
+                SKAction.scale(to: 0.01, duration: 0.05),
                 SKAction.removeFromParent()]))
             //移除coin特效节点
             coinEmitter?.run(SKAction.sequence([

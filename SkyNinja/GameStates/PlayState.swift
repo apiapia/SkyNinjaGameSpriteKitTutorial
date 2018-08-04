@@ -1,8 +1,6 @@
 //
 //  PlayState.swift
 //  SkyNinja
-//
-//  Created by Chen on 2018/6/10.
 //  Copyright © 2018 iFiero. All rights reserved.
 //
 
@@ -15,6 +13,7 @@ class PlayState:GKState {
     init(scene:SKScene){
         self.scene = scene as! GameScene
         super.init()
+         print("Play State")
     }
     
     /// 前一State是WaitState

@@ -1,8 +1,6 @@
 //
 //  WaitingState.swift
 //  SkyNinja
-//
-//  Created by Chen on 2018/6/10.
 //  Copyright © 2018 iFiero. All rights reserved.
 //
 
@@ -17,6 +15,7 @@ class WaitingState:GKState {
     init(scene:SKScene){
         self.scene = scene as! GameScene
         super.init()
+         print("Waiting State")
     }
     //MARK: - 初始化PlayButton,但获得点击事件touchesBegan是在GameScene中进行判断;
     func initPlayButton() {

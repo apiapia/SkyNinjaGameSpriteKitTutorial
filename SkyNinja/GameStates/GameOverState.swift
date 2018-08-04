@@ -2,7 +2,6 @@
 //  GameOverState.swift
 //  SkyNinja
 //
-//  Created by Chen on 2018/6/10.
 //  Copyright © 2018 iFiero. All rights reserved.
 //
 
